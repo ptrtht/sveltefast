@@ -19,10 +19,6 @@ export class Users {
     }
   }
 
-  static async signInWithToken(token_hash: string, type: EmailOtpType) {
-    const { error } = await supabase.auth.verifyOtp({ token_hash, type });
-  }
-
   static async getCurrentUser() {
     const { data, error } = await supabase.auth.getUser();
     if (error) Errors.warn(error);
