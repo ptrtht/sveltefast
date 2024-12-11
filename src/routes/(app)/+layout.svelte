@@ -20,7 +20,7 @@
 
   $effect(() => {
     if (isSidebarHovered || isSidebarExpanded) {
-      $sidebarWidth = 20;
+      $sidebarWidth = 15;
       // set shouldShowExtendedContent to true, but delay it by 100 ms
       setTimeout(() => {
         shouldShowExtendedContent = true;
@@ -73,14 +73,14 @@
           {shouldShowExtendedContent ? 'My App' : ''}
         </span>
         <button class="btn btn-ghost btn-square" onclick={() => (isSidebarExpanded = !isSidebarExpanded)}>
-          {#if shouldShowExtendedContent}
+          {#if isSidebarExpanded}
             ←
           {:else}
             🟰
           {/if}
         </button>
       </div>
-      <ul>
+      <ul class="flex grow items-center">
         <li>
           <a href="/">
             😀
